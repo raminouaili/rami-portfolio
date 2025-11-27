@@ -1,0 +1,5 @@
+.gradient-bg{background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0f172a 100%)}
+.dotnet-icon{background:linear-gradient(135deg,#512bd4,#68217a)}
+.glass{background:rgba(255,255,255,0.05)}
+.animate-float{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}

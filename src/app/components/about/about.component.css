@@ -1,0 +1,4 @@
+.glass{background:rgba(255,255,255,0.05);}
+.gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.card-hover{transition:all 0.3s ease}
+.card-hover:hover{transform:translateY(-5px)}

@@ -1,0 +1,6 @@
+/* Optionnel: styles locaux au composant */
+:host {
+  display: block;
+}
+
+/* Keep CSS primarily in styles.css */

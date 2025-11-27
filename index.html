@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rami Nouaili | Développeur .NET Confirmé</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #ec4899);
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .dotnet-icon {
+            background: linear-gradient(135deg, #512bd4, #68217a);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold gradient-text">RN</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white transition">Accueil</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white transition">À propos</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-white transition">Compétences</a>
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-white transition">Expérience</a>
+                    <a href="#education" class="nav-link text-gray-300 hover:text-white transition">Formation</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#home" class="block text-gray-300 hover:text-white transition">Accueil</a>
+                <a href="#about" class="block text-gray-300 hover:text-white transition">À propos</a>
+                <a href="#skills" class="block text-gray-300 hover:text-white transition">Compétences</a>
+                <a href="#experience" class="block text-gray-300 hover:text-white transition">Expérience</a>
+                <a href="#education" class="block text-gray-300 hover:text-white transition">Formation</a>
+                <a href="#contact" class="block text-gray-300 hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+            <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="mb-8">
+                <div class="w-40 h-40 mx-auto mb-8 rounded-full dotnet-icon flex items-center justify-center text-6xl font-bold shadow-2xl shadow-purple-500/30">
+                    RN
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                <span class="gradient-text">Rami Nouaili</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">Développeur .NET Confirmé</h2>
+            <p class="text-gray-400 text-lg mb-8 flex items-center justify-center gap-2">
+                <i class="fas fa-map-marker-alt text-blue-400"></i>
+                Saint-Bruno-de-Montarville, QC, Canada
+            </p>
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="mailto:raminouaili@gmail.com" class="glass px-6 py-3 rounded-full hover:bg-white/10 transition flex items-center gap-2">
+                    <i class="fas fa-envelope text-blue-400"></i>
+                    <span class="hidden sm:inline">Email</span>
+                </a>
+                <a href="https://linkedin.com/in/rami-nouaili" target="_blank" class="glass px-6 py-3 rounded-full hover:bg-white/10 transition flex items-center gap-2">
+                    <i class="fab fa-linkedin text-blue-400"></i>
+                    <span class="hidden sm:inline">LinkedIn</span>
+                </a>
+                <a href="tel:+15143487030" class="glass px-6 py-3 rounded-full hover:bg-white/10 transition flex items-center gap-2">
+                    <i class="fas fa-phone text-blue-400"></i>
+                    <span class="hidden sm:inline">Appeler</span>
+                </a>
+            </div>
+            <a href="#about" class="inline-block animate-bounce">
+                <i class="fas fa-chevron-down text-3xl text-gray-400"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center mb-4">
+                    <span class="gradient-text">À propos</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
+                
+                <div class="glass rounded-3xl p-8 md:p-12 card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="hidden md:block">
+                            <div class="w-16 h-16 rounded-2xl dotnet-icon flex items-center justify-center">
+                                <i class="fas fa-code text-2xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-lg text-gray-300 leading-relaxed">
+                                Ingénieur en informatique passionné, avec <span class="text-blue-400 font-semibold">six années d'expérience</span> dans le développement backend en .NET et l'architecture d'applications à forte volumétrie de données. Spécialiste des <span class="text-purple-400 font-semibold">migrations vers .NET 8</span>, de la conception d'API robustes et de l'application des bonnes pratiques <span class="text-pink-400 font-semibold">SOLID et DDD</span>. Habitué aux environnements Agile, à l'animation d'événements SCRUM et au partage de bonnes pratiques au sein des équipes.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+                        <div class="text-center p-4 rounded-2xl bg-white/5">
+                            <div class="text-3xl font-bold text-blue-400">6+</div>
+                            <div class="text-gray-400 text-sm">Années d'expérience</div>
+                        </div>
+                        <div class="text-center p-4 rounded-2xl bg-white/5">
+                            <div class="text-3xl font-bold text-purple-400">.NET 8</div>
+                            <div class="text-gray-400 text-sm">Spécialiste</div>
+                        </div>
+                        <div class="text-center p-4 rounded-2xl bg-white/5">
+                            <div class="text-3xl font-bold text-pink-400">3</div>
+                            <div class="text-gray-400 text-sm">Langues</div>
+                        </div>
+                        <div class="text-center p-4 rounded-2xl bg-white/5">
+                            <div class="text-3xl font-bold text-green-400">Agile</div>
+                            <div class="text-gray-400 text-sm">Méthodologie</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center mb-4">
+                    <span class="gradient-text">Compétences</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Languages & Frameworks -->
+                    <div class="glass rounded-3xl p-6 card-hover">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                                <i class="fas fa-code text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Langages & Frameworks</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">C# (.NET 6–8)</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">ASP.NET Core</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Entity Framework Core</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Dapper</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">LINQ</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">gRPC</span>
+                        </div>
+                    </div>
+
+                    <!-- Architecture -->
+                    <div class="glass rounded-3xl p-6 card-hover">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                                <i class="fas fa-sitemap text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Architecture & Patterns</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">DDD</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Onion Architecture</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Clean Architecture</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">CQRS</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Micro-services</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">REST</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Event Driven</span>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Cloud -->
+                    <div class="glass rounded-3xl p-6 card-hover">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center">
+                                <i class="fas fa-cloud text-pink-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">DevOps & Cloud</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Azure DevOps</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Docker</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">GitHub Actions</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Azure Pipelines</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Azure Blob Storage</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">AWS S3</span>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="glass rounded-3xl p-6 card-hover">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
+                                <i class="fas fa-database text-green-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Bases de données</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">SQL Server</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">SQLite</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Redis</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Optimisation SQL</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Conception de schémas</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Quality -->
+                    <div class="glass rounded-3xl p-6 card-hover">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-yellow-500/20 flex items-center justify-center">
+                                <i class="fas fa-tools text-yellow-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Outils & Qualité</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Git / GitHub</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">SonarQube</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Swagger / OpenAPI</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">xUnit</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">BenchmarkDotNet</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">Postman</span>
+                            <span class="skill-tag px-3 py-2 rounded-lg bg-white/10 text-sm">JMeter</span>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="glass rounded-3xl p-6 card-hover">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+                                <i class="fas fa-language text-cyan-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Langues</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Français</span>
+                                <span class="text-sm text-gray-400">C2 oral, C1 écrit</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Anglais</span>
+                                <span class="text-sm text-gray-400">Courant</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Arabe</span>
+                                <span class="text-sm text-gray-400">Courant</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center mb-4">
+                    <span class="gradient-text">Expérience Professionnelle</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
+                
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full timeline-line rounded-full"></div>
+                    
+                    <!-- Experience 1 -->
+                    <div class="relative mb-12">
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                <span class="inline-block px-4 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm font-medium mb-2">
+                                    Oct 2022 - Présent
+                                </span>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900 z-10"></div>
+                            <div class="md:w-1/2 md:pl-12 ml-8 md:ml-0">
+                                <div class="glass rounded-2xl p-6 card-hover">
+                                    <h3 class="text-xl font-bold text-white mb-1">Développeur .NET Backend</h3>
+                                    <p class="text-blue-400 font-medium mb-1">ISAAC Instruments</p>
+                                    <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Saint-Bruno-de-Montarville, QC, Canada</p>
+                                    <ul class="space-y-2 text-gray-300 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-blue-400 mt-1 text-xs"></i>
+                                            <span>Refonte et migration de la plateforme vers .NET 8 (APIs, services Windows)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-blue-400 mt-1 text-xs"></i>
+                                            <span>Migration du système de fichiers vers Azure Blob Storage</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-blue-400 mt-1 text-xs"></i>
+                                            <span>Mise en place d'un serveur d'authentification Duende</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-blue-400 mt-1 text-xs"></i>
+                                            <span>Automatisation de déploiement (PowerShell, Azure DevOps)</span>
+                                        </li>
+                                    </ul>
+                                    <div class="flex flex-wrap gap-2 mt-4">
+                                        <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-300 text-xs">.NET 8</span>
+                                        <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-300 text-xs">Azure</span>
+                                        <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-300 text-xs">SQL Server</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="relative mb-12">
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0 md:order-1">
+                                <div class="glass rounded-2xl p-6 card-hover md:ml-auto">
+                                    <h3 class="text-xl font-bold text-white mb-1">Analyste-Développeur Confirmé</h3>
+                                    <p class="text-purple-400 font-medium mb-1">International Information Developments</p>
+                                    <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Tunis, Tunisie</p>
+                                    <ul class="space-y-2 text-gray-300 text-sm md:text-right">
+                                        <li class="flex items-start gap-2 md:flex-row-reverse">
+                                            <i class="fas fa-chevron-left text-purple-400 mt-1 text-xs hidden md:block"></i>
+                                            <i class="fas fa-chevron-right text-purple-400 mt-1 text-xs md:hidden"></i>
+                                            <span>Automatisation de la génération des rapports MMF</span>
+                                        </li>
+                                        <li class="flex items-start gap-2 md:flex-row-reverse">
+                                            <i class="fas fa-chevron-left text-purple-400 mt-1 text-xs hidden md:block"></i>
+                                            <i class="fas fa-chevron-right text-purple-400 mt-1 text-xs md:hidden"></i>
+                                            <span>Refonte technique de l'application DevBooster</span>
+                                        </li>
+                                        <li class="flex items-start gap-2 md:flex-row-reverse">
+                                            <i class="fas fa-chevron-left text-purple-400 mt-1 text-xs hidden md:block"></i>
+                                            <i class="fas fa-chevron-right text-purple-400 mt-1 text-xs md:hidden"></i>
+                                            <span>Stratégie de rollbacks pour microservices</span>
+                                        </li>
+                                        <li class="flex items-start gap-2 md:flex-row-reverse">
+                                            <i class="fas fa-chevron-left text-purple-400 mt-1 text-xs hidden md:block"></i>
+                                            <i class="fas fa-chevron-right text-purple-400 mt-1 text-xs md:hidden"></i>
+                                            <span>Encadrement de deux développeurs</span>
+                                        </li>
+                                    </ul>
+                                    <div class="flex flex-wrap gap-2 mt-4 md:justify-end">
+                                        <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-300 text-xs">.NET</span>
+                                        <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-300 text-xs">Microservices</span>
+                                        <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-300 text-xs">SonarQube</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                            <div class="md:w-1/2 md:pl-12 ml-8 md:ml-0 md:order-2">
+                                <span class="inline-block px-4 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm font-medium">
+                                    Sept 2019 - Sept 2022
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="relative mb-12">
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                <span class="inline-block px-4 py-1 rounded-full bg-pink-500/20 text-pink-400 text-sm font-medium mb-2">
+                                    Fév 2019 - Août 2019
+                                </span>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-pink-500 rounded-full border-4 border-slate-900 z-10"></div>
+                            <div class="md:w-1/2 md:pl-12 ml-8 md:ml-0">
+                                <div class="glass rounded-2xl p-6 card-hover">
+                                    <h3 class="text-xl font-bold text-white mb-1">Stagiaire Ingénieur (PFE)</h3>
+                                    <p class="text-pink-400 font-medium mb-1">Neosys</p>
+                                    <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Tunis, Tunisie</p>
+                                    <ul class="space-y-2 text-gray-300 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-pink-400 mt-1 text-xs"></i>
+                                            <span>Conception d'une plateforme d'e-learning interne</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-pink-400 mt-1 text-xs"></i>
+                                            <span>Tests unitaires et documentation</span>
+                                        </li>
+                                    </ul>
+                                    <div class="flex flex-wrap gap-2 mt-4">
+                                        <span class="px-2 py-1 rounded bg-pink-500/20 text-pink-300 text-xs">ASP.NET MVC</span>
+                                        <span class="px-2 py-1 rounded bg-pink-500/20 text-pink-300 text-xs">Web API</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4 -->
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row items-start">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0 md:order-1">
+                                <div class="glass rounded-2xl p-6 card-hover md:ml-auto">
+                                    <h3 class="text-xl font-bold text-white mb-1">Stagiaire en Informatique</h3>
+                                    <p class="text-green-400 font-medium mb-1">TunTec</p>
+                                    <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Manouba, Tunisie</p>
+                                    <ul class="space-y-2 text-gray-300 text-sm md:text-right">
+                                        <li class="flex items-start gap-2 md:flex-row-reverse">
+                                            <i class="fas fa-chevron-left text-green-400 mt-1 text-xs hidden md:block"></i>
+                                            <i class="fas fa-chevron-right text-green-400 mt-1 text-xs md:hidden"></i>
+                                            <span>Projet domotique avec commande vocale</span>
+                                        </li>
+                                        <li class="flex items-start gap-2 md:flex-row-reverse">
+                                            <i class="fas fa-chevron-left text-green-400 mt-1 text-xs hidden md:block"></i>
+                                            <i class="fas fa-chevron-right text-green-400 mt-1 text-xs md:hidden"></i>
+                                            <span>Détection d'intrusion par reconnaissance faciale</span>
+                                        </li>
+                                    </ul>
+                                    <div class="flex flex-wrap gap-2 mt-4 md:justify-end">
+                                        <span class="px-2 py-1 rounded bg-green-500/20 text-green-300 text-xs">Raspberry Pi</span>
+                                        <span class="px-2 py-1 rounded bg-green-500/20 text-green-300 text-xs">OpenCV</span>
+                                        <span class="px-2 py-1 rounded bg-green-500/20 text-green-300 text-xs">Android</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-slate-900 z-10"></div>
+                            <div class="md:w-1/2 md:pl-12 ml-8 md:ml-0 md:order-2">
+                                <span class="inline-block px-4 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium">
+                                    Fév 2016 - Mai 2016
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center mb-4">
+                    <span class="gradient-text">Formation</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
+                
+                <div class="space-y-6">
+                    <!-- Degree 1 -->
+                    <div class="glass rounded-2xl p-6 card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-graduation-cap text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Cycle Ingénieur en Informatique et Multimédia</h3>
+                                    <p class="text-blue-400">ISAMM - Manouba, Tunisie</p>
+                                </div>
+                            </div>
+                            <span class="px-4 py-2 rounded-full bg-blue-500/20 text-blue-400 text-sm font-medium whitespace-nowrap">
+                                2016 - 2019
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Degree 2 -->
+                    <div class="glass rounded-2xl p-6 card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-graduation-cap text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Licence fondamentale en Informatique et Multimédia</h3>
+                                    <p class="text-purple-400">ISAMM - Manouba, Tunisie</p>
+                                </div>
+                            </div>
+                            <span class="px-4 py-2 rounded-full bg-purple-500/20 text-purple-400 text-sm font-medium whitespace-nowrap">
+                                2013 - 2016
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Degree 3 -->
+                    <div class="glass rounded-2xl p-6 card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-500 to-red-500 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-school text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Baccalauréat – Sciences expérimentales</h3>
+                                    <p class="text-pink-400">Lycée secondaire de Bardo - Tunis, Tunisie</p>
+                                </div>
+                            </div>
+                            <span class="px-4 py-2 rounded-full bg-pink-500/20 text-pink-400 text-sm font-medium whitespace-nowrap">
+                                2013
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center mb-4">
+                    <span class="gradient-text">Centres d'intérêt</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="glass rounded-2xl px-6 py-4 card-hover flex items-center gap-3">
+                        <i class="fas fa-book text-blue-400 text-xl"></i>
+                        <span>Lecture</span>
+                    </div>
+                    <div class="glass rounded-2xl px-6 py-4 card-hover flex items-center gap-3">
+                        <i class="fas fa-dumbbell text-purple-400 text-xl"></i>
+                        <span>Fitness</span>
+                    </div>
+                    <div class="glass rounded-2xl px-6 py-4 card-hover flex items-center gap-3">
+                        <i class="fas fa-bicycle text-pink-400 text-xl"></i>
+                        <span>Vélo</span>
+                    </div>
+                    <div class="glass rounded-2xl px-6 py-4 card-hover flex items-center gap-3">
+                        <i class="fas fa-fish text-green-400 text-xl"></i>
+                        <span>Pêche</span>
+                    </div>
+                    <div class="glass rounded-2xl px-6 py-4 card-hover flex items-center gap-3">
+                        <i class="fas fa-plane text-cyan-400 text-xl"></i>
+                        <span>Organisation de voyages</span>
+                    </div>
+                    <div class="glass rounded-2xl px-6 py-4 card-hover flex items-center gap-3">
+                        <i class="fas fa-palette text-yellow-400 text-xl"></i>
+                        <span>Dessin numérique</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold text-center mb-4">
+                    <span class="gradient-text">Contact</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
+                
+                <div class="glass rounded-3xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6">Travaillons ensemble</h3>
+                            <p class="text-gray-400 mb-8">
+                                Vous avez un projet ou une opportunité? N'hésitez pas à me contacter!
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <a href="mailto:raminouaili@gmail.com" class="flex items-center gap-4 text-gray-300 hover:text-white transition group">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/30 transition">
+                                        <i class="fas fa-envelope text-blue-400"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm text-gray-500">Email</div>
+                                        <div>raminouaili@gmail.com</div>
+                                    </div>
+                                </a>
+                                
+                                <a href="tel:+15143487030" class="flex items-center gap-4 text-gray-300 hover:text-white transition group">
+                                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition">
+                                        <i class="fas fa-phone text-purple-400"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm text-gray-500">Téléphone</div>
+                                        <div>+1 514-348-7030</div>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://linkedin.com/in/rami-nouaili" target="_blank" class="flex items-center gap-4 text-gray-300 hover:text-white transition group">
+                                    <div class="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center group-hover:bg-pink-500/30 transition">
+                                        <i class="fab fa-linkedin text-pink-400"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm text-gray-500">LinkedIn</div>
+                                        <div>linkedin.com/in/rami-nouaili</div>
+                                    </div>
+                                </a>
+                                
+                                <div class="flex items-center gap-4 text-gray-300">
+                                    <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm text-gray-500">Localisation</div>
+                                        <div>Saint-Bruno-de-Montarville, QC, Canada</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-center">
+                            <div class="w-48 h-48 rounded-full dotnet-icon flex items-center justify-center animate-float shadow-2xl shadow-purple-500/30">
+                                <div class="text-center">
+                                    <i class="fas fa-handshake text-5xl mb-2"></i>
+                                    <div class="text-sm font-medium">Ouvert aux opportunités</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">
+                    © 2025 Rami Nouaili. Tous droits réservés.
+                </p>
+                <div class="flex gap-6">
+                    <a href="https://linkedin.com/in/rami-nouaili" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="mailto:raminouaili@gmail.com" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlight
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-white');
+                link.classList.add('text-gray-300');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-gray-300');
+                    link.classList.add('text-white');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
