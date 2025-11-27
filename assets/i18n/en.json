@@ -1,0 +1,203 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "ABOUT": "About",
+    "SKILLS": "Skills",
+    "EXPERIENCE": "Experience",
+    "EDUCATION": "Education",
+    "INTERESTS": "Interests",
+    "CONTACT": "Contact",
+    "LANGUAGE": "Language"
+  },
+  "HERO": {
+    "NAME": "Rami Nouaili",
+    "ROLE": "Experienced .NET Developer",
+    "LOCATION": "Saint-Bruno-de-Montarville, QC, Canada",
+    "EMAIL": "Email",
+    "LINKEDIN": "LinkedIn",
+    "CALL": "Call"
+  },
+  "ABOUT": {
+    "TITLE": "About",
+    "PARAGRAPH": "Passionate software engineer with six years of experience in backend development with .NET and in architecting high-volume applications. Specialized in migrations to .NET 8, designing robust APIs, and applying SOLID and DDD best practices. Comfortable in Agile environments, facilitating SCRUM ceremonies, and sharing best practices across teams.",
+    "STATS": {
+      "YEARS_VALUE": "6+",
+      "YEARS_LABEL": "Years of experience",
+      "EXPERTISE_VALUE": ".NET 8",
+      "EXPERTISE_LABEL": "Specialist",
+      "LANG_VALUE": "3",
+      "LANG_LABEL": "Languages",
+      "METHOD_VALUE": "Agile",
+      "METHOD_LABEL": "Methodology"
+    }
+  },
+  "SKILLS": {
+    "TITLE": "Skills",
+    "CATEGORIES": {
+      "LANG": {
+        "TITLE": "Languages & Frameworks",
+        "ITEMS": {
+          "CSHARP": "C# (.NET 6–8)",
+          "ASPNET": "ASP.NET Core",
+          "EF": "Entity Framework Core",
+          "DAPPER": "Dapper",
+          "LINQ": "LINQ",
+          "GRPC": "gRPC"
+        }
+      },
+      "ARCHI": {
+        "TITLE": "Architecture & Patterns",
+        "ITEMS": {
+          "DDD": "DDD",
+          "ONION": "Onion Architecture",
+          "CLEAN": "Clean Architecture",
+          "CQRS": "CQRS",
+          "MICRO": "Microservices",
+          "REST": "REST",
+          "EVENT": "Event Driven"
+        }
+      },
+      "DEVOPS": {
+        "TITLE": "DevOps & Cloud",
+        "ITEMS": {
+          "AZURE_DEVOPS": "Azure DevOps",
+          "DOCKER": "Docker",
+          "GITHUB": "GitHub Actions",
+          "PIPELINES": "Azure Pipelines",
+          "BLOB": "Azure Blob Storage",
+          "S3": "AWS S3"
+        }
+      },
+      "DB": {
+        "TITLE": "Databases",
+        "ITEMS": {
+          "SQLSERVER": "SQL Server",
+          "SQLITE": "SQLite",
+          "REDIS": "Redis",
+          "OPTIM": "SQL Optimization",
+          "SCHEMA": "Schema design"
+        }
+      },
+      "TOOLS": {
+        "TITLE": "Tools & Quality",
+        "ITEMS": {
+          "GIT": "Git / GitHub",
+          "SWAGGER": "Swagger / OpenAPI",
+          "BENCH": "BenchmarkDotNet",
+          "SONAR": "SonarQube",
+          "XUNIT": "xUnit",
+          "POSTMAN": "Postman",
+          "JMETER": "JMeter"
+        }
+      },
+      "LANGUAGES": {
+        "TITLE": "Languages",
+        "FR": {
+          "LABEL": "French",
+          "LEVEL": "C2 spoken, C1 written"
+        },
+        "EN": {
+          "LABEL": "English",
+          "LEVEL": "Fluent"
+        },
+        "AR": {
+          "LABEL": "Arabic",
+          "LEVEL": "Fluent"
+        }
+      }
+    }
+  },
+  "EXPERIENCE": {
+    "TITLE": "Professional Experience",
+    "JOB1": {
+      "DATES": "Oct 2022 - Present",
+      "ROLE": ".NET Backend Developer",
+      "COMPANY": "ISAAC Instruments",
+      "LOCATION": "Saint-Bruno-de-Montarville, QC, Canada",
+      "BULLET1": "Redesigned and migrated the platform to .NET 8 (APIs, Windows services)",
+      "BULLET2": "Migrated the file system to Azure Blob Storage",
+      "BULLET3": "Implemented an authentication server with Duende",
+      "BULLET4": "Automated deployment (PowerShell, Azure DevOps)",
+      "TAG1": ".NET 8",
+      "TAG2": "Azure",
+      "TAG3": "SQL Server"
+    },
+    "JOB2": {
+      "DATES": "Feb 2019 - Aug 2019",
+      "ROLE": "Senior Analyst Developer",
+      "COMPANY": "International Information Developments",
+      "LOCATION": "Tunis, Tunisia",
+      "BULLET1": "Automated MMF report generation",
+      "BULLET2": "Technical overhaul of the DevBooster application",
+      "BULLET3": "Rollback strategy for microservices",
+      "BULLET4": "Mentored two developers",
+      "TAG1": ".NET",
+      "TAG2": "Microservices",
+      "TAG3": "SonarQube"
+    },
+    "JOB3": {
+      "DATES": "Feb 2016 - May 2016",
+      "ROLE": "Engineering Intern (PFE)",
+      "COMPANY": "Neosys",
+      "LOCATION": "Tunis, Tunisia",
+      "BULLET1": "Designed an internal e-learning platform",
+      "BULLET2": "Unit testing and documentation",
+      "TAG1": "ASP.NET MVC",
+      "TAG2": "Web API"
+    },
+    "JOB4": {
+      "DATES": "Jun 2015 - Aug 2015",
+      "ROLE": "IT Intern",
+      "COMPANY": "TunTec",
+      "LOCATION": "Manouba, Tunisia",
+      "BULLET1": "Home automation project with voice control",
+      "BULLET2": "Intrusion detection using facial recognition",
+      "TAG1": "Raspberry Pi",
+      "TAG2": "OpenCV",
+      "TAG3": "Android"
+    }
+  },
+  "EDUCATION": {
+    "TITLE": "Education",
+    "ITEM1": {
+      "TITLE": "Engineering cycle in Computer Science and Multimedia",
+      "SCHOOL": "ISAMM - Manouba, Tunisia",
+      "DATES": "2016 - 2019"
+    },
+    "ITEM2": {
+      "TITLE": "Bachelor in Computer Science and Multimedia",
+      "SCHOOL": "ISAMM - Manouba, Tunisia",
+      "DATES": "2013 - 2016"
+    },
+    "ITEM3": {
+      "TITLE": "Baccalaureate – Experimental Sciences",
+      "SCHOOL": "Lycée secondaire de Bardo - Tunis, Tunisia",
+      "DATES": "2013"
+    }
+  },
+  "INTERESTS": {
+    "TITLE": "Interests",
+    "ITEMS": {
+      "READING": "Reading",
+      "FITNESS": "Fitness",
+      "CYCLING": "Cycling",
+      "FISHING": "Fishing",
+      "TRAVEL": "Travel planning",
+      "DIGITAL_ART": "Digital drawing"
+    }
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "HEADLINE": "Let's work together",
+    "SUBTEXT": "Do you have a project or an opportunity? Feel free to reach out!",
+    "EMAIL_LABEL": "Email",
+    "PHONE_LABEL": "Phone",
+    "LINKEDIN_LABEL": "LinkedIn",
+    "LOCATION_LABEL": "Location",
+    "LOCATION_VALUE": "Saint-Bruno-de-Montarville, QC, Canada",
+    "CTA": "Open to opportunities"
+  },
+  "FOOTER": {
+    "COPY": "© 2025 Rami Nouaili. All rights reserved."
+  }
+}
