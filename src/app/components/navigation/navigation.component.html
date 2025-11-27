@@ -16,20 +16,20 @@
                     <option *ngFor="let lang of languages" [value]="lang.code">{{ lang.label }}</option>
                 </select>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-2xl">
-                <i class="fas fa-bars"></i>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl" (click)="toggleMenu()">
+                <i class="fas" [class.fa-bars]="!isMenuOpen" [class.fa-times]="isMenuOpen"></i>
             </button>
         </div>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden glass">
+    <div id="mobile-menu" class="md:hidden glass" [class.hidden]="!isMenuOpen">
         <div class="px-6 py-4 space-y-4">
-            <a href="#home" class="block text-gray-300 hover:text-white transition">{{ 'NAV.HOME' | translate }}</a>
-            <a href="#about" class="block text-gray-300 hover:text-white transition">{{ 'NAV.ABOUT' | translate }}</a>
-            <a href="#skills" class="block text-gray-300 hover:text-white transition">{{ 'NAV.SKILLS' | translate }}</a>
-            <a href="#experience" class="block text-gray-300 hover:text-white transition">{{ 'NAV.EXPERIENCE' | translate }}</a>
-            <a href="#education" class="block text-gray-300 hover:text-white transition">{{ 'NAV.EDUCATION' | translate }}</a>
-            <a href="#contact" class="block text-gray-300 hover:text-white transition">{{ 'NAV.CONTACT' | translate }}</a>
+            <a href="#home" class="block text-gray-300 hover:text-white transition" (click)="closeMenu()">{{ 'NAV.HOME' | translate }}</a>
+            <a href="#about" class="block text-gray-300 hover:text-white transition" (click)="closeMenu()">{{ 'NAV.ABOUT' | translate }}</a>
+            <a href="#skills" class="block text-gray-300 hover:text-white transition" (click)="closeMenu()">{{ 'NAV.SKILLS' | translate }}</a>
+            <a href="#experience" class="block text-gray-300 hover:text-white transition" (click)="closeMenu()">{{ 'NAV.EXPERIENCE' | translate }}</a>
+            <a href="#education" class="block text-gray-300 hover:text-white transition" (click)="closeMenu()">{{ 'NAV.EDUCATION' | translate }}</a>
+            <a href="#contact" class="block text-gray-300 hover:text-white transition" (click)="closeMenu()">{{ 'NAV.CONTACT' | translate }}</a>
             <div class="pt-2">
                 <label class="block text-gray-400 text-sm mb-1" for="language-select-mobile">{{ 'NAV.LANGUAGE' | translate }}</label>
                 <select id="language-select-mobile" aria-label="Select language" class="w-full bg-white/10 text-sm text-gray-200 rounded-xl px-3 py-2 outline-none border border-white/10"
