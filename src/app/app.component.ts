@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, Renderer2 } from '@angular/core';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,10 @@ import { Component, AfterViewInit, Renderer2 } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    private languageService: LanguageService
+  ) {}
 
   ngAfterViewInit(): void {
     // Mobile menu toggle

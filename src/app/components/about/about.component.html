@@ -1,7 +1,7 @@
 <section id="about" class="py-20">
     <div class="max-w-5xl mx-auto px-6">
         <div class="fade-in">
-            <h2 class="text-4xl font-bold text-center mb-4"><span class="gradient-text">À propos</span></h2>
+            <h2 class="text-4xl font-bold text-center mb-4"><span class="gradient-text">{{ 'ABOUT.TITLE' | translate }}</span></h2>
             <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
             <div class="glass rounded-3xl p-8 md:p-12 card-hover">
                 <div class="flex items-start gap-6">
@@ -9,14 +9,14 @@
                         <div class="w-16 h-16 rounded-2xl dotnet-icon flex items-center justify-center"><i class="fas fa-code text-2xl"></i></div>
                     </div>
                     <div>
-                        <p class="text-lg text-gray-300 leading-relaxed">Ingénieur en informatique passionné, avec <span class="text-blue-400 font-semibold">six années d'expérience</span> dans le développement backend en .NET et l'architecture d'applications à forte volumétrie de données. Spécialiste des <span class="text-purple-400 font-semibold">migrations vers .NET 8</span>, de la conception d'API robustes et de l'application des bonnes pratiques <span class="text-pink-400 font-semibold">SOLID et DDD</span>. Habitué aux environnements Agile, à l'animation d'événements SCRUM et au partage de bonnes pratiques au sein des équipes.</p>
+                        <p class="text-lg text-gray-300 leading-relaxed" [innerHTML]="'ABOUT.PARAGRAPH' | translate"></p>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-                    <div class="text-center p-4 rounded-2xl bg-white/5"><div class="text-3xl font-bold text-blue-400">6+</div><div class="text-gray-400 text-sm">Années d'expérience</div></div>
-                    <div class="text-center p-4 rounded-2xl bg-white/5"><div class="text-3xl font-bold text-purple-400">.NET 8</div><div class="text-gray-400 text-sm">Spécialiste</div></div>
-                    <div class="text-center p-4 rounded-2xl bg-white/5"><div class="text-3xl font-bold text-pink-400">3</div><div class="text-gray-400 text-sm">Langues</div></div>
-                    <div class="text-center p-4 rounded-2xl bg-white/5"><div class="text-3xl font-bold text-green-400">Agile</div><div class="text-gray-400 text-sm">Méthodologie</div></div>
+                    <div class="text-center p-4 rounded-2xl bg-white/5"><div class="text-3xl font-bold text-blue-400">{{ 'ABOUT.STATS.YEARS_VALUE' | translate }}</div><div class="text-gray-400 text-sm">{{ 'ABOUT.STATS.YEARS_LABEL' | translate }}</div></div>
+                    <div class="text-center p-4 rounded-2xl bg-white/5"><div class="text-3xl font-bold text-purple-400">{{ 'ABOUT.STATS.EXPERTISE_VALUE' | translate }}</div><div class="text-gray-400 text-sm">{{ 'ABOUT.STATS.EXPERTISE_LABEL' | translate }}</div></div>
+                    <div class="text-center p-4 rounded-2xl bg-white/5"><div class="text-3xl font-bold text-pink-400">{{ 'ABOUT.STATS.LANG_VALUE' | translate }}</div><div class="text-gray-400 text-sm">{{ 'ABOUT.STATS.LANG_LABEL' | translate }}</div></div>
+                    <div class="text-center p-4 rounded-2xl bg-white/5"><div class="text-3xl font-bold text-green-400">{{ 'ABOUT.STATS.METHOD_VALUE' | translate }}</div><div class="text-gray-400 text-sm">{{ 'ABOUT.STATS.METHOD_LABEL' | translate }}</div></div>
                 </div>
             </div>
         </div>

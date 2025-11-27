@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HeroComponent } from './components/hero/hero.component';
@@ -26,8 +29,19 @@ import { ParticlesComponent } from './components/particles/particles.component';
     FooterComponent,
     ParticlesComponent
   ],
-  imports: [BrowserModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'fr'
+    })
+  ],
+  providers: [
+    ...provideTranslateHttpLoader({
+      prefix: '/assets/i18n/',
+      suffix: '.json'
+    })
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
